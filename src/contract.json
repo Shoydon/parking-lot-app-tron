@@ -1,0 +1,240 @@
+{
+    "address": "TSyFuq3DmLtLRCAt4hEEvboKggn1ph1uUn",
+    "abi": [
+        {
+            "inputs": [],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_parkingLotId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_numberOfSpotsToBook",
+                    "type": "uint256"
+                }
+            ],
+            "name": "book_spot",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_numberOfSpots",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_pricePerLot",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "string",
+                    "name": "_ipfsHash",
+                    "type": "string"
+                }
+            ],
+            "name": "list_parking_lot",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "parkingLots",
+            "outputs": [
+                {
+                    "internalType": "string",
+                    "name": "ipfsHash",
+                    "type": "string"
+                },
+                {
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "numberOfSpots",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "spotsLeft",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "booked",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "pricePerLot",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "parkingLotsCount",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "usersBookings",
+            "outputs": [
+                {
+                    "internalType": "string",
+                    "name": "ipfsHash",
+                    "type": "string"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "parkingLotId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "numberOfSpots",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "view_all_parking_lots",
+            "outputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "string",
+                            "name": "ipfsHash",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "owner",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "id",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "numberOfSpots",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "spotsLeft",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "booked",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "pricePerLot",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct ParkingLotContract.ParkingLot[]",
+                    "name": "",
+                    "type": "tuple[]"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "view_count",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "view_my_bookings",
+            "outputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "string",
+                            "name": "ipfsHash",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "parkingLotId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "numberOfSpots",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct ParkingLotContract.Booking[]",
+                    "name": "",
+                    "type": "tuple[]"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        }
+    ]
+}
