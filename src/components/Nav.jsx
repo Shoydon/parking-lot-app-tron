@@ -14,7 +14,7 @@ function Nav({ account, checkTronLink,loading }) {
                 Ignitus Networks
               </Link>
 
-              <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
+              <ul class="md:flex px-4 mx-auto font-semibold font-heading space-x-7">
                 <Link className='no-underline text-gray-200' as={Link} to="/">
                   <li>Home</li>   </Link>
                 <Link className='no-underline text-gray-200' as={Link} to="/all-parking-lots">

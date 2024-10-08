@@ -68,7 +68,7 @@ function OwnedApartments() {
             ))
             : (
               <main style={{ padding: "1rem 0", marginTop:"20px" }}>
-                <h2 className='text-white'>No apartments bought</h2>
+                <h2 className='text-white'>No spots booked</h2>
               </main>
             ))}
       </div>

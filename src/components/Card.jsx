@@ -16,7 +16,7 @@ function Card({ item, idx, account }) {
 
   const buyMarketItem = async () => {
     if(apartmentCount < 1) {
-      toast.error("Please enter a valid apartment count to buy", {
+      toast.error("Please enter a valid spot count to buy", {
         position: "top-center"
       });
       return

@@ -12,7 +12,7 @@ const Home = ({ marketplace, account }) => {
   const [items, setItems] = useState([]);
 
   const loadMarketplaceItems = async () => {
-
+    setLoading(true)
     console.log("Inside  of Load MarketPlace Items");
     try {
       console.log(marketplace);
@@ -28,7 +28,7 @@ const Home = ({ marketplace, account }) => {
         // const item = await marketplace.items(i).call();
         const item = fetchedBuildings[i]
         console.log("item: ", item);
-        
+
         const owner = item.owner;
         const spotsLeft = Number(item.spotsLeft)
         const price = Number(item.pricePerLot)
@@ -65,31 +65,28 @@ const Home = ({ marketplace, account }) => {
 
   }, []);
 
+  if (loading) return (
+    <main style={{ padding: "1rem 0" }} className='min-h-screen'>
+      <h2 className='text-white font-bold pt-24 text-2xl text-center mt-20'>Loading...</h2>
+    </main>
+  )
+
   return (
-    <div>
-      {loading && (
-        <main className="container mx-auto mt-8">
-          <h2 className="text-center text-xl font-semibold text-gray-800 dark:text-white">Loading...</h2>
-        </main>
-      )}
-      {!loading &&
-        (
-          <div className="flex justify-center min-h-screen">
-            {items.length > 0 ? (
-              <div className="container mx-auto mt-20" >
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-5">
-                  {items.map((item, idx) => (
-                    <Card item={item} idx={idx} account={account}/>
-                  ))}
-                </div>
-              </div>
-            ) : (
-              <main className="container mx-auto mt-8">
-                <h2 className="text-center text-xl font-semibold text-gray-800 dark:text-white mt-20">No listed Parking lots...</h2>
-              </main>
-            )}
+    <div className="flex justify-center min-h-screen">
+      {
+        (items.length > 0 ? (
+          <div className="container mx-auto mt-20" >
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-5">
+              {items.map((item, idx) => (
+                <Card item={item} idx={idx} account={account} />
+              ))}
+            </div>
           </div>
-        )}
+        ) : (
+          <main className="container mx-auto mt-8">
+            <h2 className="text-center text-xl font-semibold text-gray-800 dark:text-white mt-20">No listed Parking lots...</h2>
+          </main>
+        ))}
     </div>
   );
 };
